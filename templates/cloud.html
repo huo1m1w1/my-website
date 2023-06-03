@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cloud</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/data-engineering">Data Engineering</a></li>
+        <li><a href="/cloud">Cloud</a></li>
+        <li><a href="/python">Python</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h1>Cloud Computing</h1>
+      <p>
+        Cloud computing refers to the delivery of computing resources over the internet on-demand. It offers scalable and flexible services that can be accessed and managed remotely.
+      </p>
+
+      <h2>Types of Cloud Services</h2>
+      <p>
+        Cloud computing offers different types of services, including:
+      </p>
+      <ul>
+        <li>Infrastructure as a Service (IaaS): Provides virtualized computing resources such as virtual machines, storage, and networks. Example: Amazon EC2, Azure Virtual Machines.</li>
+        <li>Platform as a Service (PaaS): Offers a platform and environment for developing, testing, and deploying applications. Example: Google App Engine, Heroku.</li>
+        <li>Software as a Service (SaaS): Delivers software applications over the internet on a subscription basis. Example: Salesforce, Microsoft Office 365.</li>
+      </ul>
+
+      <h2>Amazon Web Services (AWS)</h2>
+      <p>
+        AWS is one of the leading cloud service providers. It offers a wide range of services for various use cases. Here's an example of uploading a file to AWS S3 using the Python boto3 library:
+      </p>
+      <pre><code>
+import boto3
+
+# Create an S3 client
+s3 = boto3.client('s3')
+
+# Upload a file to S3
+bucket_name = 'your-bucket-name'
+file_path = 'path/to/file.txt'
+object_key = 'file.txt'
+
+s3.upload_file(file_path, bucket_name, object_key)
+      </code></pre>
+
+      <h2>Microsoft Azure</h2>
+      <p>
+        Azure is a cloud computing platform offered by Microsoft. It provides a wide range of services and tools. Here's an example of creating a virtual machine in Azure using the Azure CLI:
+      </p>
+      <pre><code>
+# Install the Azure CLI: https://docs.microsoft.com/cli/azure/install-azure-cli
+
+# Sign in to Azure
+az login
+
+# Create a resource group
+az group create --name myResourceGroup --location eastus
+
+# Create a virtual machine
+az vm create --resource-group myResourceGroup --name myVM --image UbuntuLTS --admin-username azureuser --generate-ssh-keys
+      </code></pre>
+      
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Your Website. All rights reserved.</p>
+  </footer>
+</body>
+</html>

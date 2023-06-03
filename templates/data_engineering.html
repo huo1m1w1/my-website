@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Data Engineering</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/data-engineering">Data Engineering</a></li>
+        <li><a href="/cloud">Cloud</a></li>
+        <li><a href="/python">Python</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h1>Data Engineering</h1>
+      <p>
+        Data engineering is the process of designing, building, and maintaining the systems and infrastructure necessary to handle large volumes of data.
+      </p>
+
+      <h2>ETL (Extract, Transform, Load)</h2>
+      <p>
+        ETL is a common data engineering process. It involves extracting data from various sources, transforming it to meet specific requirements, and loading it into a target system. Here's a Python code snippet that demonstrates a simple ETL process using pandas:
+      </p>
+      <pre><code>
+import pandas as pd
+
+# Extract data
+source_data = pd.read_csv('source_data.csv')
+
+# Transform data
+transformed_data = source_data[['column1', 'column2', 'column3']]
+
+# Load data
+transformed_data.to_csv('target_data.csv', index=False)
+      </code></pre>
+
+      <h2>Data Pipelines</h2>
+      <p>
+        Data pipelines automate the movement and transformation of data from one system to another. They often involve a series of steps or tasks that execute in a specific order. Here's an example of a data pipeline implemented using Apache Airflow:
+      </p>
+      <pre><code>
+from airflow import DAG
+from airflow.operators.python_operator import PythonOperator
+
+def extract():
+    # Extract data from source
+
+def transform():
+    # Transform data
+
+def load():
+    # Load data into target
+
+with DAG('data_pipeline', schedule_interval='@daily') as dag:
+    extract_task = PythonOperator(task_id='extract', python_callable=extract)
+    transform_task = PythonOperator(task_id='transform', python_callable=transform)
+    load_task = PythonOperator(task_id='load', python_callable=load)
+
+    extract_task >> transform_task >> load_task
+      </code></pre>
+      
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Your Website. All rights reserved.</p>
+  </footer>
+</body>
+</html>
